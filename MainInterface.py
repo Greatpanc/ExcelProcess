@@ -139,9 +139,9 @@ class MyMainFace(object):
         self.root.withdraw()
         os.system('cls')
         print("正在运行中请稍等...")
-        resultinf=exceldealfunc(filename1,filename2,filename3,filename4,filename5,num1,num2)
+        exceldealfunc(filename1,filename2,filename3,filename4,filename5,num1,num2)
         self.root.deiconify()
-        self.labeltxt.set(resultinf)
+        self.labeltxt.set("Finally")
 
     def scheduleshow(self,i):
         fill_line = self.canvas.create_rectangle(2,2,0,27,width = 0,fill = "blue") 

@@ -86,10 +86,6 @@ def exceldealfunc(filename1,filename2,filename3,filename4,filename5,num1,num2):
     data4.close()
     print("Write to Table4 Successful!")
 
-    done=nrows2/(nrows1+nrows2)
-    sys.stdout.write("\r[%s%s] %d%%" % ('█'*int(40*done),'  '*(40-int(40*done)),int(100*done)))
-    sys.stdout.flush()
-
     for i in range(1,nrows2):
         if count2[i] not in count1:
             writeoneline(table2,table5,i,nrows5)                # table2写入处理后的样本Table5
