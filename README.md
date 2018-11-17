@@ -1,3 +1,3 @@
   最近帮一个朋友用python写了一个读Excel程序操作的程序，具体要求为：读取两个Excel文件，根据其中某个特征的特征值对这两个文件进行取交集操作，生成三个Excel文件，第一个Excel文件为这两个文件的公共集，第二个Excel文件为第一个Excel文件除去公共项后的Excel文件，第三个Excel文件为第二个Excel文件除去公共项后的Excel文件。
-  由于打包包含pandas包，可执行文件太大无法上传进来，敬请原谅
+  由于新改进的程序,打包包含pandas包，可执行文件太大无法上传进来，敬请原谅
   本源码博客地址：https://blog.csdn.net/weixin_42715356/article/details/83928627
