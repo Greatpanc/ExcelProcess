@@ -25,17 +25,19 @@ class MyMainFace(object):
         self.path1 = StringVar()
         Entry(self.root, width=60,textvariable = self.path1,state='readonly').grid(row = 1, column = 1,columnspan=3)
         Button(self.root, text = "路径选择", command = self.selectPath1).grid(row = 1, column = 4)
-        self.num1 = StringVar()
-        Label(self.root,text = "  比较字段的ID").grid(row = 1, column = 5,sticky="e")
-        Entry(self.root, width=5,textvariable = self.num1).grid(row = 1, column = 6)
+        self.str1 = StringVar()
+        self.str1.set('宽带-宽带帐号')
+        Label(self.root,text = "  比较列名").grid(row = 1, column = 5,sticky="e")
+        Entry(self.root, width=12,textvariable = self.str1).grid(row = 1, column = 6)
 
         Label(self.root,text = "表2目标路径:").grid(row = 2, column = 0,sticky="e")
         self.path2 = StringVar()
         Entry(self.root,width=60,textvariable = self.path2,state='readonly').grid(row = 2, column = 1,columnspan=3)
         Button(self.root, text = "路径选择", command = self.selectPath2).grid(row = 2, column = 4)
-        self.num2 = StringVar()
-        Label(self.root,text = "  比较字段的ID").grid(row = 2, column = 5,sticky="e")
-        Entry(self.root, width=5,textvariable = self.num2).grid(row = 2, column = 6)
+        self.str2 = StringVar()
+        self.str2.set('宽带-宽带帐号')
+        Label(self.root,text = "  比较列名").grid(row = 2, column = 5,sticky="e")
+        Entry(self.root, width=12,textvariable = self.str2).grid(row = 2, column = 6)
 
         # 请选择生成表格路径
         Label(self.root,text = "请选择生成表格路径：",fg="red").grid(row = 4, column = 0,sticky="w")
@@ -123,23 +125,23 @@ class MyMainFace(object):
         else:
             filename5=filename+"/Table2_del.xlsx"
 
-        if self.num1.get():
-            num1=int(self.num1.get())
+        if self.str1.get():
+            str1=self.str1.get()
         else:
-            self.labeltxt.set("请选择好num1")
+            self.labeltxt.set("请选择好str1")
             return
 
-        if self.num2.get():
-            num2=int(self.num2.get())
+        if self.str2.get():
+            str2=self.str2.get()
         else:
-            self.labeltxt.set("请选择好num2")
+            self.labeltxt.set("请选择好str2")
             return
 
         self.button.config(state="disable") # 关闭按钮1功能
         self.root.withdraw()
         os.system('cls')
         print("正在运行中请稍等...")
-        exceldealfunc(filename1,filename2,filename3,filename4,filename5,num1,num2)
+        exceldealfunc(filename1,filename2,filename3,filename4,filename5,str1,str2)
         self.root.deiconify()
         self.labeltxt.set("Finally")
 
